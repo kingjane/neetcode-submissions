@@ -1,0 +1,7 @@
+传统的方法，使用4位字符存储数字，后面接一个#，放在字符串的开头
+把整数转化为4个字符的字符串，解密时再转化为整数
+https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0271.Encode%20and%20Decode%20Strings/README.md
+
+因为题目中说了字符串长度不超过200，因此可用一个一个字节存储长度。注意在字符串连接的时候，必须用char，unsigned char不支持。在读取的时候一定要读取成unsigned char类型，不然128就越界了。
+
+存的时候计算机可不管你是signed/unsigned，200在计算机内部就存为11001000，后面怎么解释它是编程语言的事，你如果定义它的类型是char，那么它就是-56，你如果定义它的类型是unsigned char，那么它就是200.
